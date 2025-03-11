@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .info p {
+            margin: 5px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #0056b3;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003d80;
+        }
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .language-buttons button {
+            margin: 0 5px;
+        }
+    </style>
+    <script>
+        function setLanguage(lang) {
+            const translations = {
+                en: {
+                    title: "Contact Us",
+                    address: "Company Address: Changsha, Hunan， China",
+                    phone: "Phone: +86 123-456-7890",
+                    email: "Email: info@company.com",
+                    nameLabel: "Name:",
+                    emailLabel: "Email:",
+                    messageLabel: "Message:",
+                    submit: "Submit"
+                },
+                zh: {
+                    title: "联系我们",
+                    address: "公司地址：长沙, 湖南，中国",
+                    phone: "联系电话：+86 123-456-7890",
+                    email: "电子邮箱：info@company.com",
+                    nameLabel: "姓名：",
+                    emailLabel: "邮箱：",
+                    messageLabel: "留言：",
+                    submit: "提交"
+                },
+                jp: {
+                    title: "お問い合わせ",
+                    address: "会社住所：長沙市、湖南省、中国",
+                    phone: "電話番号：+86 123-456-7890",
+                    email: "メール：info@company.com",
+                    nameLabel: "名前：",
+                    emailLabel: "メール：",
+                    messageLabel: "メッセージ：",
+                    submit: "送信"
+                }
+            };
+
+            const elements = translations[lang];
+            document.querySelector("h2").textContent = elements.title;
+            document.querySelector(".info").innerHTML = `
+                <p><strong>${elements.address}</strong></p>
+                <p><strong>${elements.phone}</strong></p>
+                <p><strong>${elements.email}</strong></p>
+            `;
+            document.querySelector("label[for='name']").textContent = elements.nameLabel;
+            document.querySelector("label[for='email']").textContent = elements.emailLabel;
+            document.querySelector("label[for='message']").textContent = elements.messageLabel;
+            document.querySelector("button[type='submit']").textContent = elements.submit;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="language-buttons">
+            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('zh')">中文</button>
+            <button onclick="setLanguage('jp')">日本語</button>
+        </div>
+        <h2>联系我们</h2>
+        <div class="info">
+            <p><strong>公司地址：</strong>长沙, 湖南，中国</p>
+            <p><strong>联系电话：</strong>+86 123-456-7890</p>
+            <p><strong>电子邮箱：</strong>info@company.com</p>
+        </div>
+        <form action="/submit" method="post">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" placeholder="请输入您的邮箱" required>
+
+            <label for="message">留言：</label>
+            <textarea id="message" name="message" rows="5" placeholder="请输入您的留言" required></textarea>
+
+            <button type="submit">提交</button>
+        </form>
+    </div>
+</body>
+</html>

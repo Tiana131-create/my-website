@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>example.html</title>
+    <!-- Link to css so that what I wrote in css can shows up -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <img src="images/hci_logo.png" alt="Logo1" width="400">
+        <br>
+          <!-- The class tag is used to give different background colours to the nav on different pages in css. -->
+        <div class="example">
+            <!-- The a tag is a hyperlink that jumps to another page -->
+            <a href="index.html">Home</a>
+            <a href="GamesIntroduction.html">Introduction</a>
+            <a href="Aboutus.html">About us</a>
+            <a href="Contactus.html">Conntact us</a>
+            <img src="images/logo_colour.png" alt="Logo2" height="30" id="logo2">
+        </div>
+    </nav>
+    <!-- This is used for parallax -->
+    <div class="parallax-for-example"></div>
+    <!-- "Class" is for css to write the main body style -->
+    <div class="main_content">
+        <h1>Example</h1>
+        <h2>The interface of a music app</h2>
+        <!-- Strong tag can emphasise the importance of the word and can be bolded -->
+        <strong>Here is a photo of a mobile music player interface:</strong>
+        <br>
+        <!-- The div tag(id) is to put the photo in the middle of the page in css -->
+        <div class="centre_img_example_qq">
+            <img src="images/qqmusic1.jpg" alt="music app interface1" width="300">
+            <img src="images/qqmusic2.jpg" alt="music app interface2" width="300">
+            <img src="images/qqmusic_error.jpg" alt="music app interface3" width="300">
+        </div>
+        <!-- This is an ordered list -->
+        <ol>
+            <li><strong>Visibility of system status: </strong>The interface clearly shows the currently playing song, the artist, album artwork, playback controls, and the progress of the current track.</li>
+            <li><strong>Match between system and the real world:</strong> The playback controls (play, pause, skip forward/backward) match the real world.</li>
+            <li><strong>User control and freedom:</strong> The user has full control over playback with clearly buttons to play, pause and skip.</li>
+            <li><strong>Consistency and standards: </strong>The layout and functionality of this interface is consistent with other widely used music player apps, making it familiar and easy to use.</li>
+        </ol>
+        <strong>There's a heuristics that not obey:</strong>
+        <!-- This is an ordered list -->
+        <ol>
+            <li><strong>Help users recognize and recover from errors:</strong>When a music file is damaged or unplayable, the page simply greys out the song name and is not responsive when clicked on, without prompting the user as to what the music is unplayable for.</li>
+        </ol>
+        <h2>Interface recommendations</h2>
+        <p>Set the alert text after clicking on a playback error or file error to help the user find out what's wrong and prompts the user on how to fix it. To achieve Help users recognize and recover from errors</p>
+        <h2>Accepted as correct interface</h2>
+        <!-- The div tag(class) is to put the photo in the middle of the page in css -->
+        <div class="centre_img_example_apple">
+            <img src="images/apple_music.jpg" alt="apple music" width="300">
+            <img src="images/apple_music_error.jpg" alt="apple music error" width="300">
+        </div>
+    </div>
+    <!-- The class tag is used to give different background colours to the footer on different pages in css. -->
+    <footer class="example">
+        <a href="./index.html">Home</a> 
+        <a href="./usabililty_rules.html">Usabilily Rules</a>
+        <a href="./example.html">Example</a>
+        <br>
+        <!-- id is for css -->
+        <p id="copyright">Site develop and maintained by John Yuan &#169; 2024</p>
+    </footer>
+</body>
+</html>
